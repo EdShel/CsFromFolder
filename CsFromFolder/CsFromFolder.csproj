@@ -6,11 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ExampleTemplates\Template.cs" />
     <Compile Remove="Template.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Template.cs">
+    <None Include="ExampleTemplates\Template.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

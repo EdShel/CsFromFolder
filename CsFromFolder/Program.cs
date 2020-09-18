@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace CsFromFolder
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             ProgramArgs options = GetProgramParameters(args);
             if (options == null)
