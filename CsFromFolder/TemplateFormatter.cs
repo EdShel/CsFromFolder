@@ -9,8 +9,6 @@ namespace CsFromFolder
     {
         const string FOR_EACH_FILE_REGION_NAME = "FOR EACH FILE";
 
-        const string FILE_NAME_AS_VALID_NAME = "";
-
         private static readonly IDictionary<string, Func<string, string>> fileNameReplaces;
 
         static TemplateFormatter()

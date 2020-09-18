@@ -2,7 +2,7 @@
   "profiles": {
     "CsFromFolder": {
       "commandName": "Project",
-      "commandLineArgs": "-t \"Template.cs\" -r C:\\Users\\Admin\\Desktop\\C#\\HaveYouSeenMySkin\\HYSMS\\HYSMS\\Content\\Sprites "
+      "commandLineArgs": "-t \"ExampleTemplates\\Template.cs\" -r C:\\Users\\Admin\\Desktop\\C#\\HaveYouSeenMySkin\\HYSMS\\HYSMS\\Content\\Sprites "
     }
   }
 }

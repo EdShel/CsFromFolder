@@ -31,10 +31,11 @@ namespace CsFromFolder
 
         private static ProgramArgs GetProgramParameters(string[] args)
         {
-            CommandLineParser.CommandLineParser parser = new CommandLineParser.CommandLineParser();
+            CommandLineParser.CommandLineParser parser = null; 
 
             try
             {
+                parser = new CommandLineParser.CommandLineParser();
                 return ExtractArgumentsByFrom(parser, args);
             }
             catch (CommandLineException ex)
@@ -61,7 +62,7 @@ namespace CsFromFolder
         private static void HandleArgumentsParsingError(CommandLineParser.CommandLineParser parser, CommandLineException ex)
         {
             Console.Error.WriteLine(ex.Message);
-            parser.ShowUsage();
+            parser?.ShowUsage();
         }
     }
 }
