@@ -16,7 +16,8 @@ namespace CsFromFolder
             fileNameReplaces = new Dictionary<string, Func<string, string>>()
             {
                 { "FILE_PATH_PASCAL_CASE", FilePathFormatter.ToPascalCaseWithoutExtension },
-                { "FILE_PATH_CAMEL_CASE", FilePathFormatter.ToCamelCaseWithoutExtension}
+                { "FILE_PATH_CAMEL_CASE", FilePathFormatter.ToCamelCaseWithoutExtension},
+                { "FILE_PATH_RELATIVE", (fileName) => fileName }
             };
         }
 
