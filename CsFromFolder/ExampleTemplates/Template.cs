@@ -18,14 +18,14 @@ namespace Example
 
         private static Sprite GetSprite(string spriteName)
         {
-            return NamespaceOfYourGameEngine.ContentLoad<Sprite>(spriteName);
+            return YourContentManager.ContentLoad<Sprite>(spriteName);
         }
 
         #region FOR EACH FILE
 
         public static void UnloadFILE_PATH_PASCAL_CASE(string spritePath)
         {
-            NamespaceOfYourGameEngine.ContentUnloader<Sprite>(@"FILE_PATH_RELATIVE");
+            YourContentManager.ContentUnload<Sprite>(@"FILE_PATH_RELATIVE");
         }
 
         #endregion
