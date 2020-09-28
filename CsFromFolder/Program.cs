@@ -41,7 +41,7 @@ namespace CsFromFolder
             catch (CommandLineException ex)
             {
                 HandleArgumentsParsingError(parser, ex);
-                throw ex;
+                return null;
             }
         }
 
