@@ -8,14 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ExampleTemplates\Template.cs" />
     <Compile Remove="Template.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="ExampleTemplates\Template.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
