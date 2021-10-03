@@ -7,6 +7,11 @@ namespace CsFromFolder
 {
     public static class FilePathFormatter
     {
+        /// <summary>
+        /// <code>
+        /// \Foo\bar.baz => FooBar
+        /// </code>
+        /// </summary>
         public static string ToPascalCaseWithoutExtension(string filePath)
         {
             string[] words = SplitPathByWordsWithoutExtension(filePath);
@@ -50,6 +55,11 @@ namespace CsFromFolder
             return capitalLetter + lowerCasePart;
         }
 
+        /// <summary>
+        /// <code>
+        /// \Foo\bar.baz => fooBar
+        /// </code>
+        /// </summary>
         public static string ToCamelCaseWithoutExtension(string filePath)
         {
             string pascalCased = ToPascalCaseWithoutExtension(filePath);
@@ -64,6 +74,18 @@ namespace CsFromFolder
             string otherPart = text.Substring(1);
 
             return firstLetter + otherPart;
+        }
+
+        /// <summary>
+        /// <code>
+        /// \Foo\bar.baz => \Foo\bar
+        /// </code>
+        /// </summary>
+        public static string ToFilePathWithoutExtenstion(string filePath)
+        {
+            string withoutExtension = RemoveFileExtension(filePath);
+
+            return withoutExtension;
         }
     }
 }

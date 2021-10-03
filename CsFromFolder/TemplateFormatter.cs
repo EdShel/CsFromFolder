@@ -7,7 +7,7 @@ namespace CsFromFolder
 {
     static class TemplateFormatter
     {
-        const string FOR_EACH_FILE_REGION_NAME = "FOR EACH FILE";
+        const string FOR_EACH_FILE_REGION_NAME = "%FOR EACH FILE%";
 
         private static readonly IDictionary<string, Func<string, string>> fileNameReplaces;
 
@@ -15,9 +15,10 @@ namespace CsFromFolder
         {
             fileNameReplaces = new Dictionary<string, Func<string, string>>()
             {
-                { "FILE_PATH_PASCAL_CASE", FilePathFormatter.ToPascalCaseWithoutExtension },
-                { "FILE_PATH_CAMEL_CASE", FilePathFormatter.ToCamelCaseWithoutExtension},
-                { "FILE_PATH_RELATIVE", (fileName) => fileName }
+                { "%FILE_PATH_PASCAL_CASE%", FilePathFormatter.ToPascalCaseWithoutExtension },
+                { "%FILE_PATH_CAMEL_CASE%", FilePathFormatter.ToCamelCaseWithoutExtension},
+                { "%FILE_PATH_RELATIVE_NO_EXT%", FilePathFormatter.ToFilePathWithoutExtenstion },
+                { "%FILE_PATH_RELATIVE%", (fileName) => fileName },
             };
         }
 

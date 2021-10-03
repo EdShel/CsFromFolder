@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <None Include="ExampleTemplates\Template.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
