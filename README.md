@@ -27,31 +27,13 @@ namespace Example
 {
     public static class Sprites
     {
-        #region FOR EACH FILE
+        #region %FOR EACH FILE%
 
-        public static string FILE_PATH_PASCAL_CASE => @"FILE_PATH_RELATIVE";
-
-        #endregion
-
-        #region FOR EACH FILE
-
-        public static Sprite FILE_PATH_CAMEL_CASE => GetSprite(@"FILE_PATH_RELATIVE");
+        public static Sprite FILE_PATH_CAMEL_CASE => GetSprite(@"%FILE_PATH_RELATIVE%");
 
         #endregion
 
-        private static Sprite GetSprite(string spriteName)
-        {
-            return YourContentManager.ContentLoad<Sprite>(spriteName);
-        }
-
-        #region FOR EACH FILE
-
-        public static void UnloadFILE_PATH_PASCAL_CASE(string spritePath)
-        {
-            YourContentManager.ContentUnload<Sprite>(@"FILE_PATH_RELATIVE");
-        }
-
-        #endregion
+        <your implementation of GetSprite method or other code>
     }
 }
 ```
@@ -70,39 +52,13 @@ namespace Example
 {
     public static class Sprites
     {
-        public static string PlayerIdle => @"Player\idle.png";
-
-        public static string PlayerRun => @"Player\run.png";
-        
-        public static string EnemyIdle => @"Enemy\idle.png";
-        
-        
         public static Sprite playerIdle => GetSprite(@"Player\idle.png");
         
         public static Sprite playerRun => GetSprite(@"Player\run.png");
         
         public static Sprite enemyIdle => GetSprite(@"Enemy\idle.png");
         
-        
-        private static Sprite GetSprite(string spriteName)
-        {
-            return YourContentManager.ContentLoad<Sprite>(spriteName);
-        }
-
-        public static void UnloadPlayerIdle(string spritePath)
-        {
-            YourContentManager.ContentUnload<Sprite>(@"Player\idle.png");
-        }
-
-        public static void UnloadPlayerRun(string spritePath)
-        {
-            YourContentManager.ContentUnload<Sprite>(@"Player\run.png");
-        }
-        
-        public static void UnloadEnemyIdle(string spritePath)
-        {
-            YourContentManager.ContentUnload<Sprite>(@"Enemy\idle.png");
-        }
+        <your implementation of GetSprite method or other code>
     }
 }
 ```
@@ -111,7 +67,7 @@ namespace Example
 
 ## Create a template file.
 
-This file may be of any size, extension and so on. But it has to contain a region __#region FOR EACH FILE__ with specific content and the ending for it __#endregion__.
+This file may be of any size, extension and so on. But it has to contain a region __#region %FOR EACH FILE%__ with specific content and the ending for it __#endregion__.
 
 This region will be repeated for every discovered file and must contain keywords
 which will be replaced with a properly formatted file names (ones discovered in the folder). 
@@ -130,11 +86,13 @@ C:\Project\Sprites\
 
 the replaced values will be such as:
 
-- __PlayerIdle__ (for FILE_PATH_PASCAL_CASE)
+- __PlayerIdle__ (for %FILE_PATH_PASCAL_CASE%)
 
-- __playerIdle__ (for FILE_PATH_CAMEL_CASE)
+- __playerIdle__ (for %FILE_PATH_CAMEL_CASE%)
 
-- __Player\idle.png__ (for FILE_PATH_RELATIVE)
+- __Player\idle.png__ (for %FILE_PATH_RELATIVE%)
+
+- __Player\idle__ (for %FILE_PATH_RELATIVE_NO_EXT%)
 
 
 
